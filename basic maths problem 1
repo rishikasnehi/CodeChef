@@ -6,9 +6,9 @@ int main() {
     cin>>t;
     while(t--){
         int x;
-        cin>>x;
+        cin >> x;
         // your code goes here
-        int km = 10*x;
+        int km = 10 * x;
         cout << km << endl;
     
     }
