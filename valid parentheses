@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        string s;
+        cin >> s;
+        stack<char> s1;
+        for(char a : s)
+        {
+            if(a == '(')
+                s1.push('(');
+            else if(a == ')')
+            {
+                if(!s1.empty() && s1.top() == '(')
+                    s1.pop();
+                else
+                {
+                    s1.push(')');
+                    break;
+                }
+            }
+        }
+        if(!s1.empty())
+            cout << "0" << endl;
+        else
+            cout << "1" << endl;
+    }
+}
