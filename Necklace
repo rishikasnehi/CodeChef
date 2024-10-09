@@ -17,7 +17,6 @@ int main() {
             q.push(x);
         }
         stack <int> s1;
-        k %= n;
         while(k--)
         {
             int j = q.front();
