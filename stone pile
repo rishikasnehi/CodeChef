@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        int n;
+        cin >> n;
+        queue <int> q;
+        for(int i = 0; i < n; i++)
+        {
+            int x;
+            cin >> x;
+            q.push(x);
+        }
+        int moves = 0;
+        int player = 0;
+        while(q.size() > 1)
+        {
+            if(player == 0)
+            {
+                q.push(q.front());
+                q.pop();
+                q.pop();
+            }
+            if(player == 1)
+            {
+                q.push(q.front());
+                q.pop();
+                q.push(q.front());
+                q.pop();
+                q.pop();
+            }
+            player = 1 - player;
+        }
+        cout << player << " " << q.front() << endl;
+    }
+}
