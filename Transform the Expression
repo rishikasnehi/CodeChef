@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+    int t;
+    cin >> t;
+    while(t--){
+        string expression;
+        cin >> expression;
+        string rpn = "";
+        stack<char> stk;
+        for(char a : expression){
+            if(isalpha(a)){
+                rpn = rpn + a; 
+            }
+            else if(a == ')'){
+                while(!stk.empty() && stk.top() != '('){
+                    rpn += stk.top();
+                    stk.pop();
+                }
+                stk.pop();
+            }
+            else
+                stk.push(a);
+        }
+        cout << rpn << endl;
+    }
+}
