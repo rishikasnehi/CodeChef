@@ -1,0 +1,29 @@
+/*struct Node {
+	int val;
+	struct Node* next;
+	Node(int x){
+		val = x;
+		next = NULL;
+	}
+};*/
+
+int getMiddleElement(Node* head){
+    Node*temp = head;
+    int len = 0;;
+    while(temp != NULL)
+    {
+        len++;
+        temp = temp -> next;
+    }
+    // return len;
+    int mid = (len / 2) + 1;
+    // cout << mid;
+    temp = head;
+    int i = 1;
+    while(temp != NULL && i != mid)
+    {
+        i++;
+        temp = temp -> next;
+    }
+    return temp->val;
+}
