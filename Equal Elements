@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        int temp = n;
+        map<int, int> mp;
+        while(temp--){
+            int num;
+            cin >> num;
+            mp[num]++;
+        }
+        int maxm = 0;
+        for(auto i : mp)
+            maxm = max(maxm, i.second);
+        cout << n - maxm << endl;
+    }
+}
