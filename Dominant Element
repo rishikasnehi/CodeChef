@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        int temp = n;
+        map<int, int> mp;
+        while(temp--){
+            int num;
+            cin >> num;
+            mp[num]++;
+        }
+        int max_freq = 0, second_max_freq = 0;
+        for (auto entry : mp) {
+            int count = entry.second;
+            if (count > max_freq){
+                second_max_freq = max_freq;
+                max_freq = count;
+            }
+            else if (count > second_max_freq)
+                second_max_freq = count;
+        }
+        if (max_freq > second_max_freq)
+            cout << "Yes" << endl;
+        else
+            cout << "No" << endl;
+}
+}
